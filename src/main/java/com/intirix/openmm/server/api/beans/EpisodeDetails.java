@@ -11,6 +11,8 @@ public class EpisodeDetails
 	private int numInternalLinks = 0;
 	
 	private int numExternalLinks = 0;
+	
+	private MediaLink[] links = new MediaLink[]{};
 
 	public Episode getEpisode()
 	{
@@ -40,6 +42,16 @@ public class EpisodeDetails
 	public void setNumExternalLinks( int numExternalLinks )
 	{
 		this.numExternalLinks = numExternalLinks;
+	}
+
+	public MediaLink[] getLinks()
+	{
+		return links;
+	}
+
+	public void setLinks( MediaLink[] links )
+	{
+		this.links = links;
 	}
 
 
