@@ -1,7 +1,6 @@
 package com.intirix.openmm.server.api.beans;
 
 import java.io.Serializable;
-import java.util.Calendar;
 
 import org.simpleframework.xml.Default;
 import org.simpleframework.xml.Element;
@@ -27,16 +26,23 @@ public class Episode implements Serializable, Cloneable
 	
 	private int dvdNum;
 	
+	@Element(required=false)
 	private String screenshotPath = "";
 	
+	@Element(required=false)
 	private String description = "";
 	
+	@Element(required=false)
+	private String guests = "";
+	
+	@Element(required=false)
 	private String airDate = "";
 	
+	@Element(required=false)
 	private String rating = "";
 	
 	@Element(required=false)
-	private Calendar lastWatched;
+	private String lastWatched = "";
 	
 	private int watchCount = 0;
 
@@ -131,6 +137,21 @@ public class Episode implements Serializable, Cloneable
 			this.description = description;
 		}
 	}
+	
+	
+
+	public String getGuests()
+	{
+		return guests;
+	}
+
+	public void setGuests( String guests )
+	{
+		if ( guests != null )
+		{
+			this.guests = guests;
+		}
+	}
 
 	public String getAirDate()
 	{
@@ -155,12 +176,12 @@ public class Episode implements Serializable, Cloneable
 		}
 	}
 
-	public Calendar getLastWatched()
+	public String getLastWatched()
 	{
 		return lastWatched;
 	}
 
-	public void setLastWatched( Calendar lastWatched )
+	public void setLastWatched( String lastWatched )
 	{
 		this.lastWatched = lastWatched;
 	}
@@ -188,8 +209,11 @@ public class Episode implements Serializable, Cloneable
 		episode.dvdNum = dvdNum;
 		episode.screenshotPath = screenshotPath;
 		episode.description = description;
+		episode.guests = guests;
 		episode.airDate = airDate;
 		episode.rating = rating;
+		episode.lastWatched = lastWatched;
+		episode.watchCount = watchCount;
 		
 		return episode;
 	}

@@ -3,6 +3,7 @@ package com.intirix.openmm.server.api.beans;
 import java.io.Serializable;
 
 import org.simpleframework.xml.Default;
+import org.simpleframework.xml.Element;
 
 @Default
 public class Show implements Serializable, Cloneable
@@ -22,6 +23,7 @@ public class Show implements Serializable, Cloneable
 	
 	private String tvdbId = "";
 	
+	@Element(required=false)
 	private String tvdbLang = "en";
 	
 	private String imdbId = "";
