@@ -4,7 +4,7 @@ import org.simpleframework.xml.Default;
 import org.simpleframework.xml.Element;
 
 @Default
-public class Movie implements Comparable< Movie >
+public class Movie implements Comparable< Movie >, Cloneable
 {
 	private int id;
 
@@ -227,6 +227,28 @@ public class Movie implements Comparable< Movie >
 	public int compareTo( Movie arg0 )
 	{
 		return getDisplayName().compareToIgnoreCase( arg0.getDisplayName() );
+	}
+
+	@Override
+	public Object clone() throws CloneNotSupportedException
+	{
+		final Movie movie = new Movie();
+		
+		movie.setDescription( getDescription() );
+		movie.setDisplayName( getDisplayName() );
+		movie.setGenre( getGenre() );
+		movie.setId( getId() );
+		movie.setImdbId( getImdbId() );
+		movie.setLinks( getLinks() );
+		movie.setMpaaRating( getMpaaRating() );
+		movie.setName( getName() );
+		movie.setPosterUrl( getPosterUrl() );
+		movie.setRating( getRating() );
+		movie.setReleaseDate( getReleaseDate() );
+		movie.setTrailers( getTrailers() );
+		movie.setYear( getYear() );
+		
+		return movie;
 	}
 
 
