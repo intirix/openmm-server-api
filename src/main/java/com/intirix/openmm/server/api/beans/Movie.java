@@ -42,11 +42,11 @@ public class Movie implements Comparable< Movie >, Cloneable
 	@Element(required=false)
 	private String genre = "";
 
-	@Element(required=false)
-	private MediaLink[] trailers;
+//	@Element(required=false)
+	private MediaLink[] trailers = new MediaLink[]{};
 
-	@Element(required=false)
-	private MediaLink[] links;
+//	@Element(required=false)
+	private MediaLink[] links = new MediaLink[]{};
 
 	public int getId()
 	{

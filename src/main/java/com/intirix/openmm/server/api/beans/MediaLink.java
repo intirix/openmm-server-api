@@ -8,7 +8,7 @@ public class MediaLink implements Comparable< MediaLink >
 
 	private int id;
 	
-	private String mediaTypeCode;
+	private String mediaTypeCode = "M";
 	
 	private boolean available = true;
 	
@@ -113,7 +113,10 @@ public class MediaLink implements Comparable< MediaLink >
 
 	public void setService( String service )
 	{
-		this.service = service;
+		if ( service != null )
+		{
+			this.service = service;
+		}
 	}
 
 
