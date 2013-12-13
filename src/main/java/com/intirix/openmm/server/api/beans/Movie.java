@@ -47,6 +47,9 @@ public class Movie implements Comparable< Movie >, Cloneable
 
 //	@Element(required=false)
 	private MediaLink[] links = new MediaLink[]{};
+	
+	@Element(required=false)
+	private String lastWatched = "";
 
 	public int getId()
 	{
@@ -223,6 +226,18 @@ public class Movie implements Comparable< Movie >, Cloneable
 	{
 		this.links = links;
 	}
+	
+	
+
+	public String getLastWatched()
+	{
+		return lastWatched;
+	}
+
+	public void setLastWatched( String lastWatched )
+	{
+		this.lastWatched = lastWatched;
+	}
 
 	public int compareTo( Movie arg0 )
 	{
@@ -247,6 +262,7 @@ public class Movie implements Comparable< Movie >, Cloneable
 		movie.setReleaseDate( getReleaseDate() );
 		movie.setTrailers( getTrailers() );
 		movie.setYear( getYear() );
+		movie.setLastWatched( getLastWatched() );
 		
 		return movie;
 	}
