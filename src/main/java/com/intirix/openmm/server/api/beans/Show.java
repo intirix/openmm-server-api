@@ -21,19 +21,25 @@ public class Show implements Serializable, Cloneable
 	
 	private String displayName = "";
 	
+	@Element(required=false)
 	private String tvdbId = "";
 	
 	@Element(required=false)
 	private String tvdbLang = "en";
 	
+	@Element(required=false)
 	private String imdbId = "";
 	
+	@Element(required=false)
 	private String zap2itId = "";
 	
+	@Element(required=false)
 	private String contentRating = "";
 	
+	@Element(required=false)
 	private String bannerPath = "";
 	
+	@Element(required=false)
 	private String description = "";
 	
 	private boolean active = true;
